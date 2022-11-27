@@ -17,7 +17,7 @@ export class MonumentoService {
   }
   
   async findOne(id: number): Promise<Monumento> {
-    return this.monumentoRepository.findOne(id);
+    return this.monumentoRepository.findOne(id);//Hay que descubrir la forma de hacer este endpoint
   }
   
   create(createMonumentoDto: CreateMonumentoDto) {
