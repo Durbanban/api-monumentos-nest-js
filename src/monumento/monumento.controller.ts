@@ -1,7 +1,6 @@
-import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put, HttpCode, HttpStatus } from '@nestjs/common';
 import { MonumentoService } from './monumento.service';
-import { CreateMonumentoDto } from './dto/create-monumento.dto';
-import { UpdateMonumentoDto } from './dto/update-monumento.dto';
+import { Monumento } from './entities/monumento.entity';
 
 @Controller('monumento')
 export class MonumentoController {
@@ -9,26 +8,32 @@ export class MonumentoController {
 
   
   @Get()
+  @HttpCode(HttpStatus.OK)
   findAll() {
+    if(this.monumentoService.findAll())
     return this.monumentoService.findAll();
   }
   
   @Get(':id')
+  @HttpCode(HttpStatus.OK)
   findOne(@Param('id') id: string) {
     return this.monumentoService.findOne(+id);
   }
   
   @Post()
-  create(@Body() createMonumentoDto: CreateMonumentoDto) {
-    return this.monumentoService.create(createMonumentoDto);
+  @HttpCode(HttpStatus.CREATED)
+  create(@Body() monumento: Monumento) {
+    return this.monumentoService.create(monumento);
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateMonumentoDto: UpdateMonumentoDto) {
-    return this.monumentoService.update(+id, updateMonumentoDto);
+  @HttpCode(HttpStatus.OK)
+  update(@Param('id') id: string, @Body() monumento: Monumento) {
+    return this.monumentoService.update(+id, monumento);
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
     return this.monumentoService.remove(+id);
   }

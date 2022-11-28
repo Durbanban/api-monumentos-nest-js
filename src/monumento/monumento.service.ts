@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateMonumentoDto } from './dto/create-monumento.dto';
-import { UpdateMonumentoDto } from './dto/update-monumento.dto';
 import { Monumento } from './entities/monumento.entity';
 
 @Injectable()
@@ -17,18 +15,18 @@ export class MonumentoService {
   }
   
   async findOne(id: number): Promise<Monumento> {
-    return this.monumentoRepository.findOne(id);//Endpoint
+    return this.monumentoRepository.findOneById(id);
   }
   
-  create(createMonumentoDto: CreateMonumentoDto) {
-    return 'This action adds a new monumento';
+  create(monumento: Monumento) {
+    return this.monumentoRepository.save(monumento);
   }
 
-  update(id: number, updateMonumentoDto: UpdateMonumentoDto) {
-    return `This action updates a #${id} monumento`;
+  update(id: number, monumento: Monumento) {
+    return this.monumentoRepository.update(id, monumento);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} monumento`;
+    return this.monumentoRepository.delete(id);
   }
 }
