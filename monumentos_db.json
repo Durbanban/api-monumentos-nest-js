@@ -1,0 +1,11 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"monumentos_db"},
+{"type":"table","name":"monumento","database":"monumentos_db","data":
+[
+{"id":"3","cityName":"Úbeda","countryCode":"ESP","countryName":"España","description":"La Sacra Capilla del Salvador del Mundo es un templo construido bajo patrocinio de Francisco de los Cobos como panteón anexo a su palacio de Úbeda (provincia de Jaén), en la actualmente llamada plaza Vázquez de Molina.","name":"Sacra Capilla El Salvador","location":"38.0081363,-3.3665001"},
+{"id":"4","cityName":"Sevilla","countryCode":"ESP","countryName":"España","description":"El Estadio Benito Villamarín es un recinto deportivo propiedad del Real Betis Balompié, ubicado en la avenida de la Palmera del barrio de Heliópolis de Sevilla, España.​ Se inauguró el 17 de marzo de 1929 y su aforo actualmente es de 60 721 espectadores, que lo sitúa como el mayor estadio de Andalucía y el cuarto más grande de España.","name":"Benito Villamarín","location":"37.3565037,-5.9817521"},
+{"id":"5","cityName":"El Cairo","countryCode":"EGY","countryName":"Egipto","description":"La Gran Pirámide de Guiza (también conocida como pirámide de Keops o de Jufu) es, además de la mayor de las pirámides de Egipto, la más antigua de las siete maravillas del mundo antiguo y la única que todavía perdura. Fue ordenada a construir por el faraón Keops de la cuarta dinastía del Antiguo Egipto. Acerca del arquitecto de dicha obra, algunos estudiosos nombran a Hemiunu, pero no está comprobado.","name":"Gran pirámide de Guiza","location":"29.9792345,31.1342019"}
+]
+}
+]
